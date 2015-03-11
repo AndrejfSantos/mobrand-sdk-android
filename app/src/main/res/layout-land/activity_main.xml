@@ -1,0 +1,415 @@
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:background="#dedede"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:background="#FFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button"
+
+                    android:background="@drawable/mobrand_red_button_btn_default_holo_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="#FFF"
+                    android:drawableTop="@drawable/ic_top"
+                    android:textSize="10sp"
+                    android:text="TOP" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:background="@drawable/mobrand_green_button_btn_default_holo_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:textSize="10sp"
+                    android:drawableTop="@drawable/ic_apps"
+                    android:layout_weight="1"
+                    android:text="APPS" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_games"
+                    android:background="@drawable/mobrand_orange_button_btn_default_holo_light"
+                    android:textSize="10sp"
+                    android:text="GAMES" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:background="@drawable/mobrand_blue_button_btn_default_holo_light"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_mobrando"
+                    android:textSize="10sp"
+                    android:text="DISCOVERY" />
+
+            </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp" android:background="#d8d8d8"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:paddingLeft="25dp" android:paddingRight="25dp" android:paddingTop="15dp" android:paddingBottom="10dp">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Portugal's Top"
+                    android:textAppearance="?android:textAppearanceLarge"/>
+
+                </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:paddingLeft="40dp" android:paddingRight="-80dp">
+
+            <LinearLayout
+
+                android:layout_width="wrap_content" android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                android:layout_height="wrap_content" android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                    </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_width="match_parent" android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                android:layout_height="wrap_content" android:orientation="horizontal">
+
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content" android:paddingLeft="65dp" android:paddingRight="65dp" android:paddingTop="15dp" android:paddingBottom="10dp">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trending"
+                    android:textAppearance="?android:textAppearanceLarge"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_width="match_parent" android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                android:layout_height="wrap_content" android:orientation="horizontal">
+
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="270dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="270dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:paddingLeft="65dp" android:paddingRight="65dp" android:paddingTop="15dp" android:paddingBottom="10dp">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Portugal's Top"
+                    android:textAppearance="?android:textAppearanceLarge"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_width="match_parent" android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                android:layout_height="wrap_content" android:orientation="horizontal">
+
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_width="match_parent" android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                android:layout_height="wrap_content" android:orientation="horizontal">
+
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:paddingLeft="65dp" android:paddingRight="65dp" android:paddingTop="15dp" android:paddingBottom="10dp">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recommended"
+                    android:textAppearance="?android:textAppearanceLarge"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_width="match_parent" android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                android:layout_height="wrap_content" android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:background="@drawable/bg_card"
+                    android:layout_height="180dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content" android:layout_gravity="center" android:scaleType="centerInside" android:adjustViewBounds="true"
+                    android:layout_height="wrap_content" android:src="@drawable/ic_mobrand" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+    </LinearLayout>
+
+    <!-- android:layout_gravity="start" tells DrawerLayout to treat
+         this as a sliding drawer on the left side for left-to-right
+         languages and on the right side for right-to-left languages.
+         If you're not building against API 17 or higher, use
+         android:layout_gravity="left" instead. -->
+    <!-- The drawer is given a fixed width in dp and extends the full height of
+         the container. -->
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:animateLayoutChanges="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical" >
+
+        <LinearLayout
+            android:padding="5dp"
+            android:background="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/top_button"
+
+                android:background="@drawable/mobrand_red_button_btn_default_holo_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="#FFF"
+                android:drawableTop="@drawable/ic_top"
+                android:textSize="10sp"
+                android:text="TOP" />
+
+            <Button
+                android:id="@+id/apps_button"
+                android:background="@drawable/mobrand_green_button_btn_default_holo_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:textSize="10sp"
+                android:drawableTop="@drawable/ic_apps"
+                android:layout_weight="1"
+                android:text="APPS" />
+
+            <Button
+                android:id="@+id/games_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_games"
+                android:background="@drawable/mobrand_orange_button_btn_default_holo_light"
+                android:textSize="10sp"
+                android:text="GAMES" />
+
+            <Button
+                android:id="@+id/discovery_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:background="@drawable/mobrand_blue_button_btn_default_holo_light"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_mobrando"
+                android:textSize="10sp"
+                android:text="DISCOVERY" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp" android:background="#d8d8d8"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/please_wait"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+        <ImageView
+            android:id="@+id/mobrando"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_mobrandwhite2"/>
+
+        <TextView
+            android:layout_width="wrap_content" android:padding="10dp"
+            android:layout_height="wrap_content" android:textColor="#9e9e9e" android:text="Loading..."/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/content"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:background="@color/window_background"
+        android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
