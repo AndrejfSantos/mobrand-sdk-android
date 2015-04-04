@@ -2,5 +2,11 @@
 <resources>
 
     <color name="window_background">#dedede</color>
+    <color name="Transparent">#0fff</color>
+    <color name="red">#FB1A2F</color>
+    <color name="green">#5cad4b</color>
+    <color name="blue">#1aa0e7</color>
+    <color name="orange">#fb6e1a</color>
+    <color name="mobrand">#528ca8</color>
 
 </resources>
