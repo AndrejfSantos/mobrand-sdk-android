@@ -1,16 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
 
-        <item name="hideOnContentScroll">true</item>
-        <item name="windowActionBar">false</item>
+
 
     </style>
 
     <style name="MobrandActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:background">#007ac8dd</item>
+
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <style name="MobrandPlayButton" parent="@style/Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/mobrand</item>
+
         <item name="android:textColor">#FFF</item>
     </style>
 

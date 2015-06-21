@@ -10,28 +10,54 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:background="@drawable/bg_card"
-    android:layout_height="230dp"
-    android:layout_margin="5dp">
+    android:layout_height="182dp">
 
     <ImageView
         android:id="@+id/appicon"
-        android:layout_width="144dp"
+        android:layout_width="match_parent"
         android:layout_margin="5dp"
+        android:layout_height="match_parent" android:scaleType="centerInside" android:layout_above="@+id/name"/>
 
-        android:paddingTop="5dp"
-        android:layout_height="144dp" android:layout_centerHorizontal="true"/>
+
+
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:id="@+id/progressBar"
+        android:layout_above="@+id/name"
+
+        app:spb_sections_count="4"
+        app:spb_color="@color/mobrand"
+        app:spb_speed="1.0"
+        app:spb_stroke_width="2dp"
+        app:spb_stroke_separator_length="4dp"
+        app:spb_reversed="false"
+        app:spb_mirror_mode="false"
+        app:spb_progressiveStart_activated="true"
+        app:spb_progressiveStart_speed="1.0"
+        app:spb_progressiveStop_speed="1.0"
+        />
+
 
     <TextView
+
         android:id="@+id/name"
         android:ellipsize="end"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"  android:layout_below="@id/appicon" android:layout_margin="8dp"/>
 
-    <RatingBar
-        android:id="@+id/rating"
-        android:layout_width="wrap_content" android:layout_alignStart="@id/name"
-        android:layout_height="wrap_content" android:numStars="5" style="?android:ratingBarStyleSmall" android:layout_below="@id/name"/>
+        android:maxLines="2"
+        android:minLines="2"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  android:paddingBottom="8dp" android:paddingLeft="8dp" android:paddingRight="8dp"/>
+
+
+
+
 
 </RelativeLayout>
 
