@@ -1,4 +1,4 @@
-package com.mobrand.mobrandsample;
+package com.mobrand.appwall;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,7 +15,6 @@ import android.widget.FrameLayout;
 
 import com.mobrand.json.model.Ads;
 import com.mobrand.json.model.IAds;
-import com.mobrand.json.model.Impression;
 import com.mobrand.model.Header;
 import com.mobrand.model.MobrandType;
 import com.mobrand.model.Mobrando;
@@ -24,14 +23,8 @@ import com.mobrand.model.ViewType;
 import com.mobrand.sdk.R;
 import com.mobrand.view.AppwallAdapter;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -55,13 +48,13 @@ public class FragmentPage extends Fragment {
     private GridLayoutManager gridLayoutManager;
     int color = 1;
 
-    BlockingQueue<Impression> strings = new ArrayBlockingQueue<>(1000);
 
     int colorArray[] = new int[]{R.color.mobrand, R.color.green, R.color.orange, R.color.blue};
     private AppwallAdapter appwallAdapter;
     private boolean runAdapter;
     private FrameLayout progressBar;
-    private String impressionsEndpoint = "http://api.mobrand.net";
+
+    private String impressionsEndpoint = "http://api.mobrand.net/";
 
 
     RestAdapter adsAdapter = new RestAdapter.Builder().setEndpoint(adsEndpoint).build();
@@ -105,8 +98,8 @@ public class FragmentPage extends Fragment {
         //ximpressionsEndpoint = arguments.getString("impressions_endpoint");
 
         placementId = arguments.getString("placementid");
-
         country = arguments.getString("country");
+
     }
 
     @Override
@@ -114,7 +107,6 @@ public class FragmentPage extends Fragment {
         super.onSaveInstanceState(outState);
 
         outState.putString("appid", appId);
-
         outState.putString("ads_endpoint", adsEndpoint);
         outState.putString("placementid", placementId);
 
@@ -125,7 +117,7 @@ public class FragmentPage extends Fragment {
         super.setUserVisibleHint(isVisibleToUser);
 
         if (isVisibleToUser && color != 0) {
-            ((MainActivity) getActivity()).colorizeActionBar(getResources().getColor(colorArray[getArguments().getInt("position")]));
+            ((AppWall) getActivity()).colorizeActionBar(getResources().getColor(colorArray[getArguments().getInt("position")]));
         }
 
         if (isVisibleToUser) {
@@ -165,7 +157,7 @@ public class FragmentPage extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         int color = getResources().getColor(colorArray[getArguments().getInt("position")]);
-        appwallAdapter = new AppwallAdapter(ads, pagerAds, strings, color, appId, placementId);
+        appwallAdapter = new AppwallAdapter(ads, pagerAds, color, appId, placementId);
 
         appwallAdapter.setCallImpressions(runAdapter);
         mRecyclerView.setAdapter(appwallAdapter);

@@ -27,7 +27,7 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.mobrand.json.model.IAds;
 import com.mobrand.json.model.Impression;
-import com.mobrand.mobrandsample.ImpressionsEngine;
+import com.mobrand.appwall.ImpressionsEngine;
 import com.mobrand.model.Header;
 import com.mobrand.model.MobrandType;
 import com.mobrand.model.ViewType;
@@ -35,7 +35,6 @@ import com.mobrand.sdk.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.concurrent.BlockingQueue;
 
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -51,20 +50,18 @@ public class AppwallAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     Handler handler = new Handler(Looper.getMainLooper());
     ArrayList<MobrandType> ads = new ArrayList<>();
     ArrayList<IAds> pagerAds = new ArrayList<>();
-    private BlockingQueue<Impression> urls;
     private final Object mutex = new Object();
 
-    private String clicksEndpoint = "http://api.mobrand.net";
+    private String clicksEndpoint = "http://api.mobrand.net/";
 
 
     boolean touching = false;
     private boolean callimpressions;
 
-    public AppwallAdapter(ArrayList<MobrandType> ads, ArrayList<IAds> pagerAds, BlockingQueue<Impression> urls, int color, String appId, String placementId) {
+    public AppwallAdapter(ArrayList<MobrandType> ads, ArrayList<IAds> pagerAds,  int color, String appId, String placementId) {
 
         this.ads = ads;
         this.pagerAds = pagerAds;
-        this.urls = urls;
         this.color = color;
         this.appid = appId;
         this.placement = placementId;
@@ -472,7 +469,7 @@ public class AppwallAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 synchronized (mutex) {
 
                     if (!isClickable) {
-                        
+
                         Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setPackage("com.android.vending");
                         intent.setData(Uri.parse(url));

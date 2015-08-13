@@ -1,4 +1,4 @@
-package com.mobrand.mobrandsample;
+package com.mobrand.appwall;
 
 import com.mobrand.json.model.IAds;
 import com.mobrand.model.MobrandType;

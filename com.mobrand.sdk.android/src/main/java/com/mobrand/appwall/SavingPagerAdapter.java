@@ -1,4 +1,4 @@
-package com.mobrand.mobrandsample;
+package com.mobrand.appwall;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +14,7 @@ public class SavingPagerAdapter extends FragmentStatePagerAdapter {
 
     private final String placementid;
     private final String appid;
+    private final String country;
 
     @Override
     public Fragment getItem(int position) {
@@ -21,6 +22,7 @@ public class SavingPagerAdapter extends FragmentStatePagerAdapter {
         bundle.putInt("position", position);
         bundle.putString("appid", appid);
         bundle.putString("placementid", placementid);
+        bundle.putString("country", country);
         FragmentPage baseFragment = new FragmentPage();
         baseFragment.setArguments(bundle);
         return baseFragment;
@@ -34,10 +36,11 @@ public class SavingPagerAdapter extends FragmentStatePagerAdapter {
 
     private SparseArray<Fragment> registeredFragments = new SparseArray<Fragment>();
 
-    public SavingPagerAdapter(FragmentManager fragmentManager, String appid, String placementid) {
+    public SavingPagerAdapter(FragmentManager fragmentManager, String appid, String placementid, String country) {
         super(fragmentManager);
         this.appid = appid;
         this.placementid = placementid;
+        this.country = country;
 
     }
 

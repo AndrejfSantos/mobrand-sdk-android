@@ -1,7 +1,6 @@
-package com.mobrand.mobrandsample;
+package com.mobrand.appwall;
 
 import com.mobrand.json.model.Ads;
-import com.mobrand.json.model.Click;
 import com.mobrand.json.model.Config;
 import com.mobrand.json.model.Impression;
 
@@ -11,7 +10,6 @@ import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.Body;
 import retrofit.http.GET;
-import retrofit.http.Header;
 import retrofit.http.Headers;
 import retrofit.http.POST;
 import retrofit.http.Query;

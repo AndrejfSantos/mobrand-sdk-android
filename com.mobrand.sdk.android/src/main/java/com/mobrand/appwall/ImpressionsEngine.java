@@ -1,10 +1,9 @@
-package com.mobrand.mobrandsample;
+package com.mobrand.appwall;
 
 import com.mobrand.json.model.Impression;
 
 import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -47,13 +46,12 @@ public class ImpressionsEngine {
                 while (isRunning) {
 
                     try {
-
+                        Thread.sleep(5000);
                         Impression take = impressions.take();
                         impressionArrayList.add(take);
                         impressions.drainTo(impressionArrayList);
                         webservices.postImpression(impressionArrayList);
                         impressionArrayList.clear();
-                        Thread.sleep(10000);
 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -77,6 +75,7 @@ public class ImpressionsEngine {
             isRunning = false;
             service.shutdown();
             service = null;
+
         }
 
     }

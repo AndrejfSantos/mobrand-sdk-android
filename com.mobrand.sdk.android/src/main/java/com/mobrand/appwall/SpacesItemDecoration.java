@@ -1,4 +1,4 @@
-package com.mobrand.mobrandsample;
+package com.mobrand.appwall;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

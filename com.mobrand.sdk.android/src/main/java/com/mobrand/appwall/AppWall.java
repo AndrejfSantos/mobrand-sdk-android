@@ -1,8 +1,9 @@
-package com.mobrand.mobrandsample;
+package com.mobrand.appwall;
 
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
@@ -16,7 +17,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.view.MenuItem;
-import android.view.View;
 
 import com.mobrand.sdk.R;
 import com.mobrand.utils.ColorUtils;
@@ -27,7 +27,7 @@ import com.nineoldandroids.animation.ValueAnimator;
 import retrofit.RestAdapter;
 
 
-public class MainActivity extends AppCompatActivity {
+public class AppWall extends AppCompatActivity {
 
     private TabBarView tabBar;
     private Toolbar mToolbarView;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(
                     context.getPackageName(), PackageManager.GET_META_DATA);
             if (appInfo.metaData != null) {
-                return appInfo.metaData.getString(name);
+                return String.valueOf(appInfo.metaData.getInt(name));
             }
         } catch (PackageManager.NameNotFoundException e) {
             // if we can’t find it in the manifest, just return null
@@ -65,10 +65,13 @@ public class MainActivity extends AppCompatActivity {
 
         String appid = getMetadata(this, "mobrand_appid");
         String placement = getIntent().getStringExtra("placementid");
+        String country = getIntent().getStringExtra("country");
+        if(appid == null){
+            throw new IllegalStateException("appid is null");
+        }
 
-        placement = "App Wall";
-        if(appid == null || placement == null){
-            throw new IllegalStateException("appid or placementid is null - appid:" + appid + " placement:" + placement);
+        if(placement == null){
+            throw new IllegalStateException("placement is null");
         }
 
         mToolbarView = (Toolbar) findViewById(R.id.toolbar);
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         final ViewPager pager = (ViewPager) findViewById(R.id.content);
-        final SavingPagerAdapter pagerAdapter = new SavingPagerAdapter(getSupportFragmentManager(), appid, placement);
+        final SavingPagerAdapter pagerAdapter = new SavingPagerAdapter(getSupportFragmentManager(), appid, placement, country);
         pager.setAdapter(pagerAdapter);
 
         pager.setOffscreenPageLimit(4);
@@ -169,5 +172,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public static void start(Context context, String placementid) {
 
+        Intent intent = new Intent(context, AppWall.class);
+        intent.putExtra("placementid", placementid);
+        intent.putExtra("country", "us");
+        context.startActivity(intent);
+
+    }
 }
