@@ -10,7 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/com.mobrand.sdk.android" />
+            <option value="$PROJECT_DIR$/mobrand.sdk.core" />
+            <option value="$PROJECT_DIR$/mobrandappwall" />
           </set>
         </option>
       </GradleProjectSettings>

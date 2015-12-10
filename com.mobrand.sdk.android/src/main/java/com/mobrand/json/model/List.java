@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mobrand.model.MobrandType;
-import com.mobrand.model.ViewType;
+import com.mobrand.view.model.MobrandType;
+import com.mobrand.view.model.ViewType;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 

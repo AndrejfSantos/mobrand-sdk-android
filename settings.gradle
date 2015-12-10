@@ -1,1 +1,1 @@
-include ':app', ':com.mobrand.sdk.android'
+include ':app', ':mobrand.sdk.core', ':mobrandappwall'

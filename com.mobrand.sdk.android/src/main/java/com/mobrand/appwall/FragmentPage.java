@@ -15,11 +15,11 @@ import android.widget.FrameLayout;
 
 import com.mobrand.json.model.Ads;
 import com.mobrand.json.model.IAds;
-import com.mobrand.model.Header;
-import com.mobrand.model.MobrandType;
-import com.mobrand.model.Mobrando;
-import com.mobrand.model.Pager;
-import com.mobrand.model.ViewType;
+import com.mobrand.view.model.Header;
+import com.mobrand.view.model.MobrandType;
+import com.mobrand.view.model.Mobrando;
+import com.mobrand.view.model.Pager;
+import com.mobrand.view.model.ViewType;
 import com.mobrand.sdk.R;
 import com.mobrand.view.AppwallAdapter;
 
@@ -91,12 +91,6 @@ public class FragmentPage extends Fragment {
 
     private void configure(Bundle arguments) {
         appId = arguments.getString("appid");
-
-
-        //adsEndpoint = arguments.getString("ads_endpoint");
-        //clicksEndpoint = arguments.getString("clicks_endpoint");
-        //ximpressionsEndpoint = arguments.getString("impressions_endpoint");
-
         placementId = arguments.getString("placementid");
         country = arguments.getString("country");
 
@@ -107,8 +101,9 @@ public class FragmentPage extends Fragment {
         super.onSaveInstanceState(outState);
 
         outState.putString("appid", appId);
-        outState.putString("ads_endpoint", adsEndpoint);
         outState.putString("placementid", placementId);
+        outState.putString("country", country);
+
 
     }
 
@@ -127,8 +122,6 @@ public class FragmentPage extends Fragment {
             } else {
                 runAdapter = true;
             }
-
-
 
         } else {
             if (appwallAdapter != null) appwallAdapter.setCallImpressions(false);

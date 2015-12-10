@@ -1,8 +1,8 @@
 package com.mobrand.appwall;
 
 import com.mobrand.json.model.IAds;
-import com.mobrand.model.MobrandType;
-import com.mobrand.model.ViewType;
+import com.mobrand.view.model.MobrandType;
+import com.mobrand.view.model.ViewType;
 
 /**
  * Created by rmateus on 08-03-2015.

@@ -1,4 +1,4 @@
-package com.mobrand.model;
+package com.mobrand.view.model;
 
 /**
  * Created by rmateus on 06/08/15.

@@ -40,7 +40,7 @@ public class AppWall extends AppCompatActivity {
             ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(
                     context.getPackageName(), PackageManager.GET_META_DATA);
             if (appInfo.metaData != null) {
-                return String.valueOf(appInfo.metaData.getInt(name));
+                return String.valueOf(appInfo.metaData.getString(name));
             }
         } catch (PackageManager.NameNotFoundException e) {
             // if we can’t find it in the manifest, just return null
@@ -59,20 +59,11 @@ public class AppWall extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.activity_main2);
 
-        ImpressionsEngine.init("http://api.mobrand.net/");
 
-        String appid = getMetadata(this, "mobrand_appid");
-        String placement = getIntent().getStringExtra("placementid");
-        String country = getIntent().getStringExtra("country");
-        if(appid == null){
-            throw new IllegalStateException("appid is null");
-        }
 
-        if(placement == null){
-            throw new IllegalStateException("placement is null");
-        }
 
         mToolbarView = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbarView);
@@ -83,7 +74,7 @@ public class AppWall extends AppCompatActivity {
 
 
         final ViewPager pager = (ViewPager) findViewById(R.id.content);
-        final SavingPagerAdapter pagerAdapter = new SavingPagerAdapter(getSupportFragmentManager(), appid, placement, country);
+        final SavingPagerAdapter pagerAdapter = new SavingPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
 
         pager.setOffscreenPageLimit(4);
@@ -172,11 +163,11 @@ public class AppWall extends AppCompatActivity {
     }
 
 
-    public static void start(Context context, String placementid) {
+    public static void open(Context context, String placementid) {
 
         Intent intent = new Intent(context, AppWall.class);
         intent.putExtra("placementid", placementid);
-        intent.putExtra("country", "us");
+        //intent.putExtra("country", "us");
         context.startActivity(intent);
 
     }

@@ -28,9 +28,9 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.mobrand.json.model.IAds;
 import com.mobrand.json.model.Impression;
 import com.mobrand.appwall.ImpressionsEngine;
-import com.mobrand.model.Header;
-import com.mobrand.model.MobrandType;
-import com.mobrand.model.ViewType;
+import com.mobrand.view.model.Header;
+import com.mobrand.view.model.MobrandType;
+import com.mobrand.view.model.ViewType;
 import com.mobrand.sdk.R;
 
 import java.io.IOException;

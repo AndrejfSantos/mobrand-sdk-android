@@ -33,7 +33,6 @@ public class ImpressionsEngine {
         }
         RestAdapter impressionsAdapter = new RestAdapter.Builder().setEndpoint(impressionsEndpoint).build();
 
-
         final ArrayList<Impression> impressionArrayList = new ArrayList<>();
 
         final Webservices webservices = impressionsAdapter.create(Webservices.class);
@@ -75,7 +74,6 @@ public class ImpressionsEngine {
             isRunning = false;
             service.shutdown();
             service = null;
-
         }
 
     }
