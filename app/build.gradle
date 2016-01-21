@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.mobrand.mobrandsample"
+        applicationId "com.mobrand.mobrandsample.us"
         minSdkVersion 10
         targetSdkVersion 23
         versionCode 1
@@ -33,8 +33,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.mobrand.sdk:appwall-classic:1.0.1'
+    //compile 'com.mobrand.sdk:appwall-classic:1.0.1'
+    compile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
+    compile project (':mobrandappwall')
 
 }
