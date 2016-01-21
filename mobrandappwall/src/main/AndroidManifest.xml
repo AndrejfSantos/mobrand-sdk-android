@@ -1,13 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mobrand.appwall.A">
+    package="com.mobrand.appwall.classic">
 
-    <application
-        android:allowBackup="true"
-        android:label="@string/app_name"
-        android:supportsRtl="true">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
-        <activity android:name=".AppWall">       </activity>
-        
+    <application>
+
+        <activity
+            android:hardwareAccelerated="true"
+            android:name="com.mobrand.appwall.classic.AppWall"
+            android:theme="@style/MobrandAppwallTheme"
+            android:configChanges="orientation|screenLayout|screenSize|keyboardHidden"
+            android:launchMode="singleTask"/>
 
     </application>
 

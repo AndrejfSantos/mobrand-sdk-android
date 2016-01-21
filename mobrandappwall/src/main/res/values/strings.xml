@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mobrand Appwall</string>
+    <string name="mobrand_appwall_noads">No ads to display</string>
+    <string name="mobrand_appwall_error">An error has occurred.</string>
+    <string name="mobrand_appwall_error_network">An error has occurred. Please verify your internet connection.</string>
+
 </resources>

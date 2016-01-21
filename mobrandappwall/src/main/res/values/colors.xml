@@ -8,5 +8,14 @@
     <color name="blue">#1aa0e7</color>
     <color name="orange">#fb6e1a</color>
     <color name="mobrand">#528ca8</color>
+    <color name="mobrandlight">#7ac8dd</color>
+
+
+    <array name="appwall_categories">
+        <item>@color/mobrand</item>
+        <item>@color/orange</item>
+        <item>@color/green</item>
+        <item>@color/mobrandlight</item>
+    </array>
 
 </resources>

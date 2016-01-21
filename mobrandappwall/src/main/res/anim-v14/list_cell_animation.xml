@@ -5,5 +5,4 @@
     android:animation="@anim/grow_in"
     android:animationOrder="normal"
     android:direction="top_to_bottom"
-    android:interpolator="@android:interpolator/linear"
-    />
+    android:interpolator="@android:interpolator/linear"/>

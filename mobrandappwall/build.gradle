@@ -1,12 +1,34 @@
+//import com.monochromeroad.gradle.plugin.aws.s3.S3Sync
+
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+
+
+
+
+repositories {
+    maven {
+        url "s3://maven-mobrand-net/maven2"
+        credentials(AwsCredentials) {
+            accessKey "AKIAJ6NQJDT2HADIWGVQ"
+            secretKey "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"
+        }
+    }
+
+
+}
+
+
 
 android {
-    compileSdkVersion 22
+
+    compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
     defaultConfig {
         minSdkVersion 10
-        targetSdkVersion 22
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -16,16 +38,92 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 }
+
+
+
+
+
+//task deploy(dependsOn: 'createmaven', type: S3Sync){
+//
+//    accessKey "AKIAJ6NQJDT2HADIWGVQ"
+//    secretKey "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"
+//
+//    // follows the jets3t conventions for action names
+//    action = 'UP'
+//    noDelete = true
+//    from "file://" + buildDir + "/maven2"
+//    into "maven-mobrand-net/maven2"
+//}
+
+
+ext {
+
+
+    publishedGroupId = 'com.mobrand.sdk'
+    libraryName = 'mobrand-appwall'
+    artifact = 'appwall-classic'
+
+    libraryDescription = 'AppWall for Mobrand SDK'
+
+    siteUrl = 'https://github.com/mobrandtech/mobrand-sdk-android'
+    gitUrl = 'https://github.com/mobrandtech/mobrand-sdk-android'
+
+    libraryVersion = '1.0.1'
+
+    developerName = 'Rui Mateus'
+    developerEmail = 'support@mobrand.com'
+
+}
+
+
+createMaven {
+
+    repositories.mavenDeployer {
+
+        repository(url: "file://" + buildDir + "/maven2")
+
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId publishedGroupId
+                artifactId artifact
+                version '1.0.1'
+                // Add your description here
+                name libraryName
+                description libraryDescription
+                url siteUrl
+
+
+                developers {
+                    developer {
+                        name developerName
+                        email developerEmail
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+
+                }
+            }
+        }
+    }
+}
+
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
     compile 'com.github.bumptech.glide:glide:3.5.1'
     compile 'de.greenrobot:eventbus:2.4.0'
-
-    compile project (':mobrand.sdk.core')
+    compile 'com.mobrand.sdk:core:1.0.0'
 }

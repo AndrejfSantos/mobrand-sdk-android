@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="TabBarView">
+    <declare-styleable name="tabBar_view">
         <attr name="tabBarColor" format="color"/>
         <attr name="tabBarSize" format="dimension"/>
     </declare-styleable>
-    <declare-styleable name="TabView">
+
+    <declare-styleable name="tab_view">
         <attr name="src" format="reference"/>
         <attr name="text" format="string"/>
     </declare-styleable>
