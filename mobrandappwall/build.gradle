@@ -1,23 +1,7 @@
-//import com.monochromeroad.gradle.plugin.aws.s3.S3Sync
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-
-
-
-
-repositories {
-    maven {
-        url "s3://maven-mobrand-net/maven2"
-        credentials(AwsCredentials) {
-            accessKey "AKIAJ6NQJDT2HADIWGVQ"
-            secretKey "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"
-        }
-    }
-
-
-}
 
 
 
@@ -30,7 +14,7 @@ android {
         minSdkVersion 10
         targetSdkVersion 21
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -42,22 +26,6 @@ android {
         abortOnError false
     }
 }
-
-
-
-
-
-//task deploy(dependsOn: 'createmaven', type: S3Sync){
-//
-//    accessKey "AKIAJ6NQJDT2HADIWGVQ"
-//    secretKey "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"
-//
-//    // follows the jets3t conventions for action names
-//    action = 'UP'
-//    noDelete = true
-//    from "file://" + buildDir + "/maven2"
-//    into "maven-mobrand-net/maven2"
-//}
 
 
 ext {
@@ -72,19 +40,18 @@ ext {
     siteUrl = 'https://github.com/mobrandtech/mobrand-sdk-android'
     gitUrl = 'https://github.com/mobrandtech/mobrand-sdk-android'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerName = 'Rui Mateus'
     developerEmail = 'support@mobrand.com'
 
 }
 
-
-createMaven {
+uploadArchives {
 
     repositories.mavenDeployer {
 
-        repository(url: "file://" + buildDir + "/maven2")
+        repository(url: "file://" + rootDir + "/maven2")
 
         // This generates POM.xml with proper parameters
         pom {
@@ -92,7 +59,7 @@ createMaven {
                 packaging 'aar'
                 groupId publishedGroupId
                 artifactId artifact
-                version '1.0.1'
+                version '1.0.2'
                 // Add your description here
                 name libraryName
                 description libraryDescription
@@ -125,5 +92,5 @@ dependencies {
     compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
     compile 'com.github.bumptech.glide:glide:3.5.1'
     compile 'de.greenrobot:eventbus:2.4.0'
-    compile 'com.mobrand.sdk:core:1.0.0'
+    compile 'com.mobrand.sdk:core:1.0.1'
 }
