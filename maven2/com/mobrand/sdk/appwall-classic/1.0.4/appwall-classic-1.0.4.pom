@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mobrand.sdk</groupId>
+  <artifactId>appwall-classic</artifactId>
+  <version>1.0.4</version>
+  <packaging>aar</packaging>
+  <name>mobrand-appwall</name>
+  <description>AppWall for Mobrand SDK</description>
+  <url>https://github.com/mobrandtech/mobrand-sdk-android</url>
+  <developers>
+    <developer>
+      <name>Rui Mateus</name>
+      <email>support@mobrand.com</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>https://github.com/mobrandtech/mobrand-sdk-android</connection>
+    <developerConnection>https://github.com/mobrandtech/mobrand-sdk-android</developerConnection>
+    <url>https://github.com/mobrandtech/mobrand-sdk-android</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>com.github.bumptech.glide</groupId>
+      <artifactId>glide</artifactId>
+      <version>3.5.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.android.support</groupId>
+      <artifactId>appcompat-v7</artifactId>
+      <version>23.1.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mobrand.sdk</groupId>
+      <artifactId>core</artifactId>
+      <version>1.0.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.android.support</groupId>
+      <artifactId>recyclerview-v7</artifactId>
+      <version>23.1.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.greenrobot</groupId>
+      <artifactId>eventbus</artifactId>
+      <version>2.4.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.castorflex.smoothprogressbar</groupId>
+      <artifactId>library</artifactId>
+      <version>1.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
