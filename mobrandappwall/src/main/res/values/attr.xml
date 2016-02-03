@@ -7,8 +7,8 @@
     </declare-styleable>
 
     <declare-styleable name="tab_view">
-        <attr name="src" format="reference"/>
-        <attr name="text" format="string"/>
+        <attr name="mb_src" format="reference"/>
+        <attr name="mb_text" format="string"/>
     </declare-styleable>
 
 </resources>

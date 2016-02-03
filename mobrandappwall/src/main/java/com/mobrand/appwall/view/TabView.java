@@ -60,11 +60,11 @@ public class TabView extends LinearLayout {
                 for (int i = 0; i < n; i++){
                     int attr = typedArray.getIndex(i);
 
-                    if (attr == R.styleable.tab_view_src) {
+                    if (attr == R.styleable.tab_view_mb_src) {
                         int src = typedArray.getResourceId(i, 0);
                         setIcon(src);
 
-                    } else if (attr == R.styleable.tab_view_text) {
+                    } else if (attr == R.styleable.tab_view_mb_text) {
                         CharSequence text = typedArray.getText(attr);
                         setText(text);
 
