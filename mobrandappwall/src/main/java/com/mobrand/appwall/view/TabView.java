@@ -39,7 +39,7 @@ public class TabView extends LinearLayout {
     public TabView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs);
 
-        LayoutInflater.from(context).inflate(R.layout.tab_view_merge, this);
+        LayoutInflater.from(context).inflate(R.layout.mb_tab_view_merge, this);
         imageView = (ImageView) findViewById(R.id.image);
         textView = (TextView) findViewById(R.id.text);
         setAttributes(context, attrs);

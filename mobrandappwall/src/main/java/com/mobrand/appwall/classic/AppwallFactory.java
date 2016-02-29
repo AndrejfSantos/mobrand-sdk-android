@@ -2,7 +2,8 @@ package com.mobrand.appwall.classic;
 
 import android.content.Context;
 
-import com.mobrand.appwall.event.MobrandLifecycle;
+import com.mobrand.sdk.core.event.MobrandLifecycle;
+
 
 /**
  * Created by rmateus on 21/01/16.
@@ -21,6 +22,7 @@ public class AppwallFactory {
         private String placement;
         private Context context;
         private MobrandLifecycle lifecycle;
+        private boolean asInterstitial;
 
         public AppwallBuilder(String placement, Context context) {
             this.placement = placement;
@@ -42,8 +44,12 @@ public class AppwallFactory {
             return this;
         }
 
+        public void setAsInterstitial(boolean asInterstitial) {
+            this.asInterstitial = asInterstitial;
+        }
+
         public void start(){
-            AppWall.start(context, placement, lifecycle);
+            AppWall.start(context, placement, lifecycle, asInterstitial);
         }
     }
 

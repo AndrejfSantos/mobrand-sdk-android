@@ -56,8 +56,8 @@ import static com.mobrand.model.Constants.MOBRAND;
 public class AppWallUnity extends AppCompatActivity {
 
 
-    public static void startAppWall(Activity activity, String placement){
-        AppWall.start(activity, placement, null);
+    public static void startAppWall(Activity activity, String placement, boolean asInterstitial){
+        AppWall.start(activity, placement, null, asInterstitial);
     }
 
 }

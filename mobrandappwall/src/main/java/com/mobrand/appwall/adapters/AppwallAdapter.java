@@ -1,17 +1,20 @@
 package com.mobrand.appwall.adapters;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mobrand.appwall.classic.R;
@@ -86,6 +89,18 @@ public class AppwallAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
 
+    public ViewPager createViewPager(Context context){
+        ViewPager viewPager = new ViewPager(context);
+        viewPager.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                (int) dipToPixels(context, 150)));
+        return viewPager;
+    }
+
+    private static float dipToPixels(Context context, float dipValue) {
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dipValue, metrics);
+    }
 
 
     @Override
@@ -98,7 +113,7 @@ public class AppwallAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         switch (viewType) {
 
             case PAGER:
-                final ViewPager pager = (ViewPager) LayoutInflater.from(parent.getContext()).inflate(R.layout.viewpager, parent, false);
+                final ViewPager pager = createViewPager(parent.getContext());
                 pager.setPageMargin((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 3, parent.getResources().getDisplayMetrics()));
 
                 final Runnable repeatingTask = new RepeatingTask(pager);
@@ -112,13 +127,13 @@ public class AppwallAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 return new RecyclerView.ViewHolder(pager) {
                 };
             case HEADER:
-                inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.header, parent, false);
+                inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.mb_header, parent, false);
                 break;
             default:
-                inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.small_item, parent, false);
+                inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.mb_small_item, parent, false);
                 break;
             case MOBRANDO:
-                return new RecyclerView.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.mobrando, parent, false)) {
+                return new RecyclerView.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.mb_mobrando, parent, false)) {
                 };
 
         }

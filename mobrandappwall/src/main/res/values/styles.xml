@@ -4,6 +4,7 @@
     <!-- Base application theme. -->
     <style name="MobrandAppwallTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
+        <item name="mb_appwallAsInterstitial">@bool/mb_appwall_as_interstitial</item>
 
     </style>
 

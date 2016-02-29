@@ -5,6 +5,7 @@ import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -14,6 +15,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -21,7 +23,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.mobrand.appwall.adapters.SavingPagerAdapter;
-import com.mobrand.appwall.event.MobrandLifecycle;
 import com.mobrand.appwall.event.NewAdsEvent;
 import com.mobrand.model.DefaultGroups;
 import com.mobrand.model.GroupStringsMapJson;
@@ -30,6 +31,7 @@ import com.mobrand.sdk.core.Defaults;
 import com.mobrand.sdk.core.GetAdsCallback;
 import com.mobrand.sdk.core.MobrandCallback;
 import com.mobrand.sdk.core.MobrandCore;
+import com.mobrand.sdk.core.event.MobrandLifecycle;
 import com.mobrand.sdk.core.model.Ad;
 import com.mobrand.sdk.core.model.CategoryEnum;
 import com.mobrand.appwall.view.TabBarView;
@@ -64,20 +66,26 @@ public class AppWall extends AppCompatActivity {
     private ViewPager mPager;
     private SavingPagerAdapter mPagerAdapter;
     private SparseArrayCompat<List<String>> headersList = DefaultGroups.getSparseArray();
+    private boolean asInterstitial;
 
     public List<Ad> getmNativeAdList() {
         return mNativeAdList;
     }
 
-    public static void start(Context context, String placement) {
-        start(context, placement, null);
+    public static AppwallFactory.AppwallBuilder build(Context context, String mPlacementId){
+        return new AppwallFactory.AppwallBuilder(mPlacementId, context);
     }
 
-    protected static void start(Context context, String placement, MobrandLifecycle callback) {
+    public static void start(Context context, String placement){
+        start(context, placement, null, false);
+    }
+
+    protected static void start(Context context, String placement, MobrandLifecycle callback, boolean asInterstitial) {
 
         Intent intent = new Intent(context, AppWall.class);
 
         intent.putExtra("placementid", placement);
+        intent.putExtra("asInterstitial", asInterstitial);
 
         context.startActivity(intent);
 
@@ -129,17 +137,26 @@ public class AppWall extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         try {
-            setContentView(R.layout.appwall);
+            setContentView(R.layout.mb_appwall_content);
             loading(true);
 
             mCore = new MobrandCore(this);
             mPlacementId = getIntent().getStringExtra("placementid");
             mToolbarView = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(mToolbarView);
+
+
             getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            getSupportActionBar().setCustomView(R.layout.tabbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setCustomView(R.layout.mb_tabbar);
+
+            TypedArray ta = getTheme().obtainStyledAttributes(new int[]{R.attr.mb_appwallAsInterstitial});
+            asInterstitial = ta.getBoolean(0, true);
+            ta.recycle();
+
+            if(!asInterstitial) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+            }
 
             mPager = (ViewPager) findViewById(R.id.content);
             mPager.setOffscreenPageLimit(4);
@@ -207,6 +224,18 @@ public class AppWall extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        if (asInterstitial) {
+            getMenuInflater().inflate(R.menu.interstitialmenu, menu);
+        }
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+
     private void init(MobrandCore core) {
         EventBus.getDefault().post(new MobrandLifecycle.Event(MobrandLifecycle.EnumLifecycle.CREATE));
         core.getAdsAsync(mPlacementId, new GetAdsCallback() {
@@ -246,7 +275,7 @@ public class AppWall extends AppCompatActivity {
                 } else {
                     try {
                         initPager(context, apps, games, mobrando);
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                     EventBus.getDefault().post(new NewAdsEvent(mNativeAdList, headersList));
@@ -346,9 +375,13 @@ public class AppWall extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.getItemId() == android.R.id.home || item.getItemId() == R.id.home) {
+        int itemId = item.getItemId();
+
+        if (itemId == android.R.id.home || itemId == R.id.home || itemId == R.id.close) {
             finish();
         }
+
+
 
         return super.onOptionsItemSelected(item);
     }

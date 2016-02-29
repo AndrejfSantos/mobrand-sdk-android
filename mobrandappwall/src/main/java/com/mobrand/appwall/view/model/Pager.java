@@ -88,7 +88,7 @@ public class Pager extends MobrandType {
                 iAds.setImpressed(true);
             }
 
-            View inflate = LayoutInflater.from(container.getContext()).inflate(R.layout.big_item, container, false);
+            View inflate = LayoutInflater.from(container.getContext()).inflate(R.layout.mb_big_item, container, false);
 
             inflate.setOnTouchListener(new View.OnTouchListener() {
                 @Override

@@ -1,6 +1,5 @@
 package com.mobrand.appwall.classic;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -141,7 +140,7 @@ public class FragmentPage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_main, container, false);
+        View v = inflater.inflate(R.layout.mb_page, container, false);
 
         mGridLayoutManager = new GridLayoutManager(inflater.getContext(), 6);
 
