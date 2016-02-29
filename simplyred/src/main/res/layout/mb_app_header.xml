@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="?attr/mb_interstitial_appBackgroundColor"
+    tools:showIn="@layout/mb_simplyred">
+
+
+    <ImageView
+        android:id="@+id/appIconFull"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:alpha="0.1"
+        android:scaleType="centerCrop"
+         />
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="16dp"
+        android:adjustViewBounds="true"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/appIcon"
+        android:layout_alignTop="@+id/appIcon"
+        android:layout_toRightOf="@id/appIcon"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="6dp">
+
+
+        <TextView
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:id="@+id/appName"
+            android:fadingEdge="horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:ellipsize="marquee"
+            android:textColor="?attr/mb_interstitial_appTextColor"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:id="@+id/appCategory"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <RatingBar
+            android:progressTint="?attr/colorAccent"
+            style="?android:ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:numStars="5"
+            android:id="@+id/ratingBar"
+            android:paddingTop="6dp"
+            android:rating="4.5" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

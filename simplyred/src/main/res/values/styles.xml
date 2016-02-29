@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MobrandSimplyRed" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="mb_interstitial_color">@color/mb_interstitial_color</item>
+        <item name="mb_interstitial_textColor">#FFF</item>
+        <item name="mb_interstitial_titleColor">?attr/mb_interstitial_textColor</item>
+        <item name="mb_interstitial_contentBackgroundColor">#fff</item>
+        <item name="mb_interstitial_descriptionTextColor">?android:attr/textColorSecondary</item>
+        <item name="mb_interstitial_appTextColor">#434343</item>
+        <item name="mb_interstitial_appCategoryTextColor">?android:attr/textColorSecondary</item>
+        <item name="mb_interstitial_divider">#e6e6e6</item>
+        <item name="mb_interstitial_windowLightStatusBar">false</item>
+        <item name="mb_interstitial_descriptionTitleTextColor">#808080</item>
+        <item name="mb_interstitial_appBackgroundColor">#f4f4f4</item>
+        <item name="android:windowLightStatusBar">?attr/mb_interstitial_windowLightStatusBar</item>
+        <item name="colorAccent">?attr/mb_interstitial_color</item>
+    </style>
+</resources>

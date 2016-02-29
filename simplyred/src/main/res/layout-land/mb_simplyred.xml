@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        android:layout_alignParentTop="true"
+        android:background="?attr/mb_interstitial_color">
+
+        <TextView
+
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Best App of the month!"
+            android:textColor="?attr/mb_interstitial_titleColor"
+            android:textSize="22sp"
+
+            android:textStyle="bold" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/content"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:orientation="horizontal">
+
+
+        <include layout="@layout/mb_app_header_land" />
+
+        <RelativeLayout
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <include layout="@layout/mb_content_panel_include"
+                 />
+
+            <include  layout="@layout/mb_footer_include_land"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/mb_please_wait" />
+
+
+</RelativeLayout>

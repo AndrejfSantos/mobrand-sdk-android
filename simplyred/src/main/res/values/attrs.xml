@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="mb_interstitial_color" format="color"/>
+    <attr name="mb_interstitial_textColor" format="color"/>
+    <attr name="mb_interstitial_titleColor" format="color"/>
+    <attr name="mb_interstitial_contentBackgroundColor" format="color"/>
+    <attr name="mb_interstitial_divider" format="color"/>
+    <attr name="mb_interstitial_descriptionTitleTextColor" format="color"/>
+    <attr name="mb_interstitial_descriptionTextColor" format="color"/>
+    <attr name="mb_interstitial_appTextColor" format="color"/>
+    <attr name="mb_interstitial_appCategoryTextColor" format="color"/>
+    <attr name="mb_interstitial_appBackgroundColor" format="color"/>
+
+    <attr name="mb_interstitial_windowLightStatusBar" format="boolean"/>
+
+
+</resources>

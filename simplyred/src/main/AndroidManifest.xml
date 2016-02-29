@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mobrand.simplyred">
+
+
+
+    <application>
+
+        <activity android:name=".MobrandSimplyRedInterstitial"
+            android:theme="@style/MobrandSimplyRed" />
+
+    </application>
+
+</manifest>

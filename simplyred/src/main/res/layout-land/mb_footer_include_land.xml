@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:padding="16dp"
+    tools:showIn="@layout/mb_simplyred">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/install"
+        android:layout_alignBottom="@+id/install"
+        android:layout_toLeftOf="@+id/install" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:maxWidth="150dp"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:src="@drawable/googleplay"  />
+
+    </FrameLayout>
+
+
+    <Button
+        android:id="@+id/install"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mb_button_bg"
+        android:minWidth="200dp"
+
+        android:text="Install now"
+        android:layout_alignParentRight="true"
+        android:textColor="?attr/mb_interstitial_textColor"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
