@@ -80,13 +80,14 @@ public class NativeAdsActivity extends AppCompatActivity {
 
                         //Click will handle all the lifecycle needed to make a click.
                         //Will contact the server, request a click, and follow the required
-                        //redirects. On successful click Google Play will me called immediately.
+                        //redirects. On successful click Google Play will be called immediately.
                         //The most common use is on a ClickListener.
                         mobrandCore.click(ad, PLACEMENT, 0, new ClickCallback() {
 
                             @Override
                             public void onReady() {
                                 //This method will run when an offer was successfully sent to Google Play.
+                                //Useful to clean up resources like loaders.
                             }
 
                             @Override
