@@ -22,16 +22,11 @@ public class NativeAdsActivity extends AppCompatActivity {
     private static String TAG = NativeAdsActivity.class.getName();
     private final static String PLACEMENT = "MegaPlacement";
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mobrandCore = new MobrandCore(this);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
         //This is needed to MobrandCore configure itself with the app, and get configuration
         //parameters.
         mobrandCore.create(new MobrandCallback() {
