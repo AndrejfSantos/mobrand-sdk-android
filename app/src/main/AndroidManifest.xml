@@ -17,9 +17,10 @@
 
         </activity>
 
+        <activity android:name=".NativeAdsActivity" android:exported="true"/>
+
 
         <meta-data android:name="mobrand_appid" android:value="sample"/>
-
 
     </application>
 

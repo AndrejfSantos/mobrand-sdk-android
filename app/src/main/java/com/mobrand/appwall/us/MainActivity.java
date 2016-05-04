@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+
 import com.mobrand.appwall.classic.AppWall;
 import com.mobrand.appwall.classic.AppwallFactory;
-import com.mobrand.appwall.event.MobrandLifecycle;
+import com.mobrand.sdk.core.event.MobrandLifecycle;
+import com.mobrand.simplyred.MobrandSimplyRedInterstitial;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,23 +19,24 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.layout);
 
-        View viewById = findViewById(R.id.openAppwall);
-
-        viewById.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AppwallFactory.createAppwall(v.getContext(), "App Wall").setLifecycle(new MobrandLifecycle() {
+        findViewById(R.id.openAppwall)
+                .setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onLifecycleEvent(Event event) {
-                        System.out.println("OnEventOuter");
+                    public void onClick(View v) {
+                        AppWall.start(v.getContext(), "App Wall");
                     }
-                }).start();
-            }
-        });
+                });
+
+        findViewById(R.id.openInterstitial)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        MobrandSimplyRedInterstitial.start(v.getContext(), "App Wall");
+                    }
+                });
+
 
     }
 
