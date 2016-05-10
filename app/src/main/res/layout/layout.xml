@@ -3,9 +3,25 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-   <WebView
-       android:id="@+id/webview"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:gravity="center">
+
+        <Button
+            android:id="@+id/openAppwall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Open Appwall"/>
+
+        <Button
+            android:id="@+id/openInterstitial"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Open Interstitial"/>
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

@@ -34,8 +34,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.mobrand.sdk:appwall-classic:1.0.2'
+    //compile 'com.mobrand.sdk:appwall-classic:1.0.4'
     compile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
-    //compile project (':mobrandappwall')
+    compile project (':mobrandappwall')
+    compile project (':simplyred')
 
 }
