@@ -25,11 +25,14 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.mobrand.sdk.core.ClickCallback;
 import com.mobrand.sdk.core.GetAdCallback;
+import com.mobrand.sdk.core.GetAdsCallback;
 import com.mobrand.sdk.core.MobrandCallback;
 import com.mobrand.sdk.core.MobrandCore;
 import com.mobrand.sdk.core.event.MobrandLifecycle;
+import com.mobrand.sdk.core.model.Ad;
 import com.mobrand.sdk.core.model.InterstitialAd;
 
+import java.util.List;
 import java.util.Random;
 
 import de.greenrobot.event.EventBus;
@@ -121,12 +124,22 @@ public class MobrandSimplyRedInterstitial extends AppCompatActivity {
         mRatingBar = (RatingBar) findViewById(R.id.ratingBar);
         mMobrandCore = new MobrandCore(this);
 
-
-
         mMobrandCore.create(new MobrandCallback() {
 
             @Override
             public void onReady(final MobrandCore mobrandCore) {
+
+                mobrandCore.getAdsAsync("", new GetAdsCallback() {
+                    @Override
+                    public void onSuccess(List<Ad> list) {
+                        
+                    }
+
+                    @Override
+                    public void onFailure() {
+
+                    }
+                });
 
                 mobrandCore.getAdAsync(mPlacementId, new GetAdCallback() {
                     @Override

@@ -21,21 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.layout);
 
-        findViewById(R.id.openAppwall)
-                .setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        AppWall.start(v.getContext(), "App Wall");
-                    }
-                });
 
-        findViewById(R.id.openInterstitial)
-                .setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        MobrandSimplyRedInterstitial.start(v.getContext(), "App Wall");
-                    }
-                });
 
 
     }

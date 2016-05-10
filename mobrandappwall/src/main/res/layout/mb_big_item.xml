@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="?selectableItemBackground">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_card">
+
+        <ImageView
+            android:id="@+id/appicon"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:scaleType="centerInside" />
+
+
+        <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appicon"
+            android:indeterminate="true"
+
+            app:spb_color="@color/mobrand"
+            app:spb_mirror_mode="false"
+            app:spb_progressiveStart_activated="false"
+            app:spb_progressiveStart_speed="1.0"
+            app:spb_progressiveStop_speed="1.0"
+            app:spb_reversed="false"
+            app:spb_sections_count="4"
+            app:spb_speed="1.0"
+            app:spb_stroke_separator_length="4dp"
+            app:spb_stroke_width="2dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/appicon"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:id="@+id/name"
+                style="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+
+                android:gravity="bottom"
+                android:maxLines="1"
+                android:minLines="1"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp" />
+
+            <TextView
+
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="bottom"
+
+
+                android:maxLines="3"
+                android:minLines="2"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

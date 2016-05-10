@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="?attr/selectableItemBackground">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:background="@drawable/bg_card">
+
+        <ImageView
+            android:id="@+id/appicon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/name"
+            android:layout_margin="5dp"
+            android:scaleType="centerInside" />
+
+
+        <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/name"
+            android:indeterminate="true"
+
+
+            app:spb_color="@color/mobrand"
+            app:spb_mirror_mode="false"
+            app:spb_progressiveStart_activated="false"
+            app:spb_progressiveStart_speed="1.0"
+            app:spb_progressiveStop_speed="1.0"
+            app:spb_reversed="false"
+            app:spb_sections_count="4"
+            app:spb_speed="1.0"
+            app:spb_stroke_separator_length="4dp"
+            app:spb_stroke_width="2dp" />
+
+
+        <TextView
+
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp" />
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#90000000"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</FrameLayout>

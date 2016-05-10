@@ -17,7 +17,7 @@
         android:alpha="0.1"
 
         android:scaleType="centerCrop"
-        android:src="@drawable/skypeicon" />
+         />
 
     <LinearLayout
         android:layout_margin="16dp"
@@ -35,7 +35,7 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/skypeicon" />
+         />
 
         <TextView
             android:singleLine="true"

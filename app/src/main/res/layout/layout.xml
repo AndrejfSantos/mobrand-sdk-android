@@ -3,12 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/openAppwall"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="Open AppWall"/>
-
-
+   <WebView
+       android:id="@+id/webview"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 
 </FrameLayout>
