@@ -3,7 +3,7 @@
   <groupId>com.mobrand.sdk</groupId>
   <artifactId>core</artifactId>
   <versioning>
-    <release>1.0.6</release>
+    <release>1.0.6a</release>
     <versions>
       <version>1.0.0</version>
       <version>1.0.1</version>
@@ -12,7 +12,8 @@
       <version>1.0.4</version>
       <version>1.0.5</version>
       <version>1.0.6</version>
+      <version>1.0.6a</version>
     </versions>
-    <lastUpdated>20160603110130</lastUpdated>
+    <lastUpdated>20160603162702</lastUpdated>
   </versioning>
 </metadata>
